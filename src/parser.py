@@ -43,7 +43,7 @@ class Parser:
 
     __DELIMITER_RE = r"\s"
     __DELIMITER_MULTIPLE_RE = r"\s+"
-    __TIMESTAMP_RE = r"(\d+(?:\.\d+)*)"
+    __TIMESTAMP_RE = r"(\d+(?:\.\d+)?)"
     __RESPONSE_HEADER_SIZE_RE = r"(\d+)"
     __RESPONSE_SIZE_RE = r"(-?\d+)"
     __CLIENT_IP_RE = r"((?:[0-9]{1,3}\.){3}[0-9]{1,3})"
