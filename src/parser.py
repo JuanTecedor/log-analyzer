@@ -32,6 +32,11 @@ class LogLine:
         self.type_of_access_and_dest_address = type_of_access_and_dest_address
         self.response_type = response_type
 
+    def __eq__(self, value: object) -> bool:
+        if not isinstance(value, LogLine):
+            return False
+        return vars(self) == vars(value)
+
 
 class Parser:
     __EXPECTED_FIELD_COUNT: Final[int] = 10

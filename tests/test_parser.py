@@ -1,6 +1,6 @@
 import pytest
 
-from src.parser import Parser
+from src.parser import LogLine, Parser
 
 
 class TestParser:
@@ -17,4 +17,11 @@ class TestParser:
     ])
     def test_parse_must_match(self, log_line: str) -> None:
         parser = Parser()
-        _ = parser.parse_line(log_line)
+        parsed_log_line = parser.parse_line(log_line)
+        assert parsed_log_line is not None
+
+        # For this simple examples we can compare the regex match
+        # with a simple line.split()
+        fields = log_line.split()
+        assert len(fields) == 10
+        assert parsed_log_line == LogLine(*fields)
