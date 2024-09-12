@@ -41,20 +41,21 @@ class LogLine:
 class Parser:
     __EXPECTED_FIELD_COUNT: Final[int] = 10
 
-    __DELIMITER_RE = r'\s'
-    __DELIMITER_MULTIPLE_RE = r'\s+'
-    __TIMESTAMP_RE = r'(\d+(?:\.\d+)*)'
-    __RESPONSE_HEADER_SIZE_RE = r'(\d+)'
-    __RESPONSE_SIZE_RE = r'(-?\d+)'
-    __CLIENT_IP_RE = r'((?:[0-9]{1,3}\.){3}[0-9]{1,3})'
-    __RESPONSE_CODE_RE = r'([A-Z_]+/\d{3})'
-    __HTTP_METHOD_RE = r'([A-Z\_]+)'
-    __URL_RE = r'(\S+)'
-    __USERNAME_RE = r'(\S+)'
-    __TYPE_OF_ACCESS_AND_DEST_ADDRESS_RE = r'(\S+)'
-    __REPONSE_TYPE_RE = r'(\S+)'
+    __DELIMITER_RE = r"\s"
+    __DELIMITER_MULTIPLE_RE = r"\s+"
+    __TIMESTAMP_RE = r"(\d+(?:\.\d+)*)"
+    __RESPONSE_HEADER_SIZE_RE = r"(\d+)"
+    __RESPONSE_SIZE_RE = r"(-?\d+)"
+    __CLIENT_IP_RE = r"((?:[0-9]{1,3}\.){3}[0-9]{1,3})"
+    __RESPONSE_CODE_RE = r"([A-Z_]+/\d{3})"
+    __HTTP_METHOD_RE = r"([A-Z\_]+)"
+    __URL_RE = r"(\S+)"
+    __USERNAME_RE = r"(\S+)"
+    __TYPE_OF_ACCESS_AND_DEST_ADDRESS_RE = r"(\S+)"
+    __REPONSE_TYPE_RE = r"(\S+)"
     __LOG_RE = (
-        __TIMESTAMP_RE + __DELIMITER_MULTIPLE_RE
+        r"^"
+        + __TIMESTAMP_RE + __DELIMITER_MULTIPLE_RE
         + __RESPONSE_HEADER_SIZE_RE + __DELIMITER_RE
         + __CLIENT_IP_RE + __DELIMITER_RE
         + __RESPONSE_CODE_RE + __DELIMITER_RE
@@ -64,6 +65,7 @@ class Parser:
         + __USERNAME_RE + __DELIMITER_RE
         + __TYPE_OF_ACCESS_AND_DEST_ADDRESS_RE + __DELIMITER_RE
         + __REPONSE_TYPE_RE
+        + r"$\n"
     )
     __COMPILED_RE = re.compile(__LOG_RE)
 
