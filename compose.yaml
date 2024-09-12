@@ -1,0 +1,6 @@
+services:
+  log-analyzer:
+    build:
+      context: .
+    volumes:
+      - ./:/app
