@@ -6,8 +6,8 @@
         "most_frequent_ip": "127.0.0.1"
     },
     "logs/access.log": {
-        "total_bytes": 2217217717,
-        "events_per_second": 3.561416662513354,
+        "total_bytes": 2216979451,
+        "events_per_second": 3.5614144955675124,
         "least_frequent_ip": "10.105.53.146",
         "most_frequent_ip": "127.0.0.1"
     }
