@@ -3,8 +3,6 @@ from src.parser import Parser
 from src.stats import (EventsPerSecondStat, IPFrequencyStat, Stat,
                        TotalBytesStat)
 
-# TODO assume empty log files are not a problem
-
 
 class Processor:
     def __init__(self, configuration: Configuration) -> None:
@@ -13,7 +11,6 @@ class Processor:
     def process_file(
         self, file_name: str
     ) -> dict[str, str | int | float | None]:
-        # TODO Assume stats are per-file basis
         stats: list[Stat] = []
         if self.__configuration.bytes_exchanged:
             stats.append(TotalBytesStat())
