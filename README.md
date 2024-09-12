@@ -24,7 +24,7 @@ docker compose run --entrypoint "python main.py --help" --build log-analyzer
 ```
 
 ```
-docker compose run --entrypoint "python main.py -i logs/access-small.log -o output-docker.json --mfip --lfip --eps --bytes" --build log-analyzer
+docker compose run --entrypoint "python main.py -i logs/access-small.log -o out/output-docker.json --mfip --lfip --eps --bytes" --build log-analyzer
 ```
 
 Warning: The docker user is non-root, and write operations are restricted to the out directory.
