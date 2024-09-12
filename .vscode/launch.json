@@ -11,7 +11,7 @@
                 "logs/access-small.log",
                 "logs/access.log",
                 "-o",
-                "output.json",
+                "out/output.json",
                 "--mfip",
                 "--lfip",
                 "--eps",
