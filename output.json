@@ -1,0 +1,14 @@
+{
+    "logs/access-small.log": {
+        "total_bytes": 78429,
+        "events_per_second": 5.714285714285714,
+        "least_frequent_ip": "10.105.21.1",
+        "most_frequent_ip": "127.0.0.1"
+    },
+    "logs/access.log": {
+        "total_bytes": 2217217717,
+        "events_per_second": 3.561416662513354,
+        "least_frequent_ip": "10.105.53.146",
+        "most_frequent_ip": "127.0.0.1"
+    }
+}
