@@ -18,7 +18,6 @@ RUN adduser \
 
 COPY . .
 
-RUN chown -R ${UID} out
 RUN pip install -r requirements.txt
 
 USER appuser

@@ -3,5 +3,6 @@ services:
     build:
       context: .
     volumes:
-      - ./:/app
+      - ./:/app:ro
+      - ./out-docker:/app/out-docker:rw
     privileged: false
